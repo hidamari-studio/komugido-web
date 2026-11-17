@@ -1,0 +1,17 @@
+{
+  "name": "komugido-web",
+  "private": true,
+  "type": "module",
+  "description": "街のパン屋「こむぎ堂」の Web サイト",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "shoot": "node scripts/shoot-stories.mjs"
+  },
+  "devDependencies": {
+    "@storybook/html-vite": "10.6.7",
+    "playwright-core": "1.52.0",
+    "storybook": "10.6.7",
+    "vite": "8.3.8"
+  }
+}

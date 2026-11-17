@@ -1,0 +1,176 @@
+:root {
+  --color-bg: #fbf7f0;
+  --color-surface: #ffffff;
+  --color-text: #3b2f25;
+  --color-accent: #c8743a;
+  --color-muted: #8a7a6a;
+  --color-line: #eadfce;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Hiragino Maru Gothic ProN", "Zen Maru Gothic", sans-serif;
+  line-height: 1.8;
+}
+
+/* ヘッダー（src/components/SiteHeader.js） */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+}
+
+.logo {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.site-header nav a {
+  margin-left: 16px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.site-header nav a[aria-current="page"] {
+  border-bottom: 2px solid var(--color-accent);
+}
+
+main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.catch {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+/* お知らせ（src/components/NewsList.js） */
+
+.news ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.news li {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--color-line);
+}
+
+.news time {
+  margin-right: 12px;
+  color: var(--color-muted);
+}
+
+.news-empty {
+  color: var(--color-muted);
+}
+
+/* パンのカード（src/components/BreadCard.js） */
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.bread-card {
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+}
+
+.bread-card__photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.bread-card__body {
+  padding: 12px 16px 16px;
+}
+
+.bread-card__badge {
+  display: inline-block;
+  padding: 0 8px;
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+}
+
+.bread-card__name {
+  margin: 4px 0;
+  font-size: 1.05rem;
+}
+
+.bread-card__desc {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+}
+
+.bread-card__price {
+  margin: 0 0 8px;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.bread-card__status {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.bread-card__reserve {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.bread-card__reserve[aria-disabled="true"] {
+  pointer-events: none;
+  text-decoration: none;
+}
+
+/* 取り置きの案内 */
+
+.reserve-note {
+  padding: 16px 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+}
+
+.shop-info dt {
+  color: var(--color-muted);
+}
+
+.shop-info dd {
+  margin: 0 0 12px;
+}
+
+.site-footer {
+  padding: 24px;
+  color: var(--color-muted);
+  text-align: center;
+}
