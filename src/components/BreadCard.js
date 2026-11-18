@@ -12,13 +12,14 @@
  * @returns {string}
  */
 export function BreadCard({ name, description, price, image, badge, soldOut = false }) {
+  const soldOutBadge = soldOut ? '<span class="bread-card__sold-badge">本日売り切れ</span>' : '';
   const photo = image
-    ? `<div class="bread-card__photo"><img src="${image}" alt="${name}"></div>`
+    ? `<div class="bread-card__photo"><img src="${image}" alt="${name}">${soldOutBadge}</div>`
     : '';
   const badgeHtml = badge ? `<span class="bread-card__badge">${badge}</span>` : '';
   const status = soldOut ? '<p class="bread-card__status">本日は売り切れました</p>' : '';
   const reserve = soldOut
-    ? '<a class="bread-card__reserve" aria-disabled="true">取り置きする</a>'
+    ? '<a class="bread-card__reserve" aria-disabled="true">取り置きできません</a>'
     : '<a class="bread-card__reserve" href="#reserve">取り置きする</a>';
 
   return `<article class="bread-card${soldOut ? ' is-sold-out' : ''}">
